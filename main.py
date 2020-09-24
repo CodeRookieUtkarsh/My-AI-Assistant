@@ -98,7 +98,7 @@ def email_sender(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login('malaiya.utkarsh@gmail.com', 'I went to the beach and played')
+    server.login('your_email_id', 'your_google_account_password')
     server.sendmail('malaiya.utkarsh@gmail.com', to, content)
     server.close()
 
@@ -132,7 +132,7 @@ def cpu_and_battery_data():
     speak(f"You have {battery_percent} percent battery left")
 
 
-def send_whatsapp_message(message):
+def send_whatsapp_message(message):  # You must be logged in WhatsApp Web of your computer
     speak("Please now enter the details as they appear on your screen and please be very sincere in doing so")
     while True:
         to = int(input("Pls enter the receiver's mobile number[No need to enter the country code]: "))
@@ -164,7 +164,7 @@ def send_whatsapp_message(message):
 
 
 def tell_news():
-    api_key = '03ffdd5a26394f30915006fd90f2eaa3'
+    api_key = 'your api key'  # You can create an API Key in newsapi.com
     sources = {'bbc-news': 'BBC News', 'al-jazeera-english': 'AlJazeera News', 'reuters': 'Reuters News'}
 
     for source_key in sources.keys():
