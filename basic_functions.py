@@ -15,7 +15,8 @@ def speak(text: str):
 
 
 def wolf_process_1(command: str):
-	wolf_client = wolf.Client('5J87J9-VA8G974452')
+	api_key = '5J87J9-VA8G974452'  # You can create your own API key in wolframalpha.com
+	wolf_client = wolf.Client(api_key)
 
 	wolf_res = wolf_client.query(command)
 
@@ -24,7 +25,8 @@ def wolf_process_1(command: str):
 
 
 def wolf_process_2(command: str):
-	wolf_client = wolf.Client('5J87J9-VA8G974452')
+	api_key = '5J87J9-VA8G974452'  # You can create your own API key in wolframalpha.com
+	wolf_client = wolf.Client(api_key)
 
 	index = command.lower().split().index('calculate')
 	query = command.split()[index + 1:]
@@ -54,7 +56,8 @@ Pls also mention the context of your query after telling me about that""")
 
 
 def definition(word: str):
-	url = f'https://dictionaryapi.com/api/v3/references/collegiate/json/{word}?key=cfdfc47e-6cb0-4dbe-bd79-0cd35cfc8d74'
+	api_key = 'your api key'  # You can create an  API Key in dictionaryapi.com. It is an API Key provider of Merriam Webster Dictionary
+ 	url = f'https://dictionaryapi.com/api/v3/references/collegiate/json/{word}?key={api_key}'
 
 	r = requests.get(url)
 
@@ -73,7 +76,8 @@ def definition(word: str):
 
 def thesaurus(word: str):
 	try:
-		url = f'https://dictionaryapi.com/api/v3/references/thesaurus/json/{word}?key=40cbf383-8921-4cd3-afe1-d74283619ba6'
+		api_key = 'your api key'  # You can create an  API Key in dictionaryapi.com. It is an API Key provider of Merriam Webster Dictionary
+		url = f'https://dictionaryapi.com/api/v3/references/thesaurus/json/{word}?key={api_key}'
 
 		r = requests.get(url)
 
